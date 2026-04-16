@@ -1,0 +1,15 @@
+node_modules/
+.env
+dist/
+.vercel/
+
+# logs
+logs
+*.log
+
+# OS files
+.DS_Store
+
+# editor folders
+.vscode/
+.idea/

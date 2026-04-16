@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background-color: #2C1E0F;
+    color: #F9F4EC;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-jost font-[200] text-[0.7rem] tracking-widest2 uppercase text-gold;
+  }
+
+  .section-title {
+    @apply font-cormorant text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-site-white;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: #C9A96E;
+  }
+
+  .divider {
+    @apply w-16 h-px bg-gold my-6;
+  }
+
+  .btn-primary {
+    @apply inline-block bg-gold text-brown px-10 py-4 font-jost text-[0.75rem] font-normal tracking-[0.2em] uppercase
+           transition-all duration-300 hover:bg-gold-light hover:-translate-y-0.5 no-underline;
+  }
+
+  .btn-outline {
+    @apply inline-block bg-transparent text-cream border border-cream/50 px-10 py-4 font-jost text-[0.75rem] font-light
+           tracking-[0.2em] uppercase transition-all duration-300 hover:border-gold hover:text-gold no-underline;
+  }
+
+  .btn-outline-gold {
+    @apply inline-block bg-transparent text-gold border border-gold px-8 py-3 font-jost text-[0.75rem] font-light
+           tracking-[0.2em] uppercase transition-all duration-300 hover:bg-gold hover:text-brown no-underline;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .tracking-widest2 { letter-spacing: 0.35em; }
+  .tracking-widest3 { letter-spacing: 0.45em; }
+}
+
+/* Niche wali scrollbar hide karne ke liye */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
